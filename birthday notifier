@@ -1,0 +1,103 @@
+App takes a registered user
+registered user creates an event, with name, date, an an optional birthday message
+then forwards it to their email as a reminder. 
+
+additional feature, it takes a phone number or mail and ticks send to celebrant to send directly
+
+
+
+
+
+
+// const events = document.getElementById('event')
+// const countdown = document.getElementById('countdown')
+
+// console.log(events.textContent)
+// const eventDate = Date.parse(events.textContent)
+
+// const coundownInterval = setInterval(() => {
+//     const now = new Date().getTime()
+//     today = new Date()
+//     const diff = eventDate - now
+
+
+//     const days = Math.floor(eventDate / (1000 * 60 * 60 * 24) - (now / (1000 * 60 * 60 * 24)))
+//     const hours = Math.floor((eventDate / (1000 * 60 * 60) - (now / (1000 * 60 * 60))) % 24)
+//     const minutes = Math.floor((eventDate / (1000 * 60 ) - (now / (1000 * 60))) % 60)
+//     const seconds = Math.floor((eventDate / (1000) - (now / (1000))) % 60)
+
+
+
+
+//     if (diff) {
+//         countdown.innerHTML = days + ' days, ' + hours + ' hours ' + minutes + ' minutes ' + seconds + ' seconds'
+
+//     } 
+//     else {
+//         clearInterval(coundownInterval)
+//         countdown.innerHTML = "Countdown completed"
+//     }
+
+// }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Enables to choose future dates
+// (function () {
+//     let today = new Date();
+//     document.getElementById("bday").max = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + (today.getDate() < 10 ? ("0" + (today.getDate()-1)) : (today.getDate()-1));
+//   })();
+  
+//   function calculateDays() {
+//     let today = new Date();
+//     let bday = new Date(document.getElementById("bday").value); 
+//     let age = today.getFullYear() - bday.getFullYear();
+    
+//     let upcomingBday = new Date(today.getFullYear(), bday.getMonth(), bday.getDate());
+    
+//     if(today > upcomingBday) {
+//       upcomingBday.setFullYear(today.getFullYear() + 1);
+//     }
+//     console.log(upcomingBday)
+    
+//     var one_day = 24 * 60 * 60 * 1000;
+    
+//     let daysLeft = Math.floor((upcomingBday.getTime() - today.getTime()) / (one_day));
+//     const hoursLeft = Math.floor((upcomingBday.getTime() / (1000 * 60 * 60) - (today.getTime() / (1000 * 60 * 60))) % 24)
+//     minutesLeft = Math.floor((upcomingBday.getTime() / (1000 * 60 ) - (today.getTime() / (1000 * 60))) % 60)
+//     const secondsLeft = Math.floor((upcomingBday.getTime() / (1000) - (today.getTime() / (1000))) % 60)
+
+
+
+//     // No need to calculate people older than 199 yo. :)   
+//     if (daysLeft && age < 200) {
+//       document.getElementById("result").innerText = `In ${daysLeft} day(s), you will be ${age + 1}!`;  
+//     } 
+//     else {
+//       document.getElementById("result").innerText = `it's days ${daysLeft}, hours ${hoursLeft}, minutes ${minutesLeft}, seconds ${secondsLeft} to your bithday`;
+//     }
+    
+//   }

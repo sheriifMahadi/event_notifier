@@ -1,0 +1,17 @@
+{% extends "birthday_notifier/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}<title>Delete Event</title>{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+<form method="post">
+
+    {% csrf_token %}
+    <p class="text-center">Are you sure you want to delete "{{ object }}"?</p>
+    
+    <button class="btn btn-primary my-4" type="submit">Confirm</button>
+</form>
+</div>
+{% endblock %}

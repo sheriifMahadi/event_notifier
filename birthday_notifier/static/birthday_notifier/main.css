@@ -1,0 +1,14 @@
+
+.events-grid {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat((3, 1fr));
+}   
+
+.event {
+    /* background-color: #f7f7f7; */
+    background-color: #f2fafa;
+    padding: 1.5em;
+    text-align: center;
+    
+}

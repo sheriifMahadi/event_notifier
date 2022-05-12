@@ -1,0 +1,56 @@
+{% extends 'birthday_notifier/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container text-center">
+        <div id='event'>
+            <h3 class="pt-3"> Birthday: {{object.birthdate|date:"d M Y H:m:s" }} </h3>
+            
+        </div>
+        <div class="text-center mt-3">Time left: </div>
+        <div id='countdown' class='text-center mt-3 h2'>
+
+            <div class="spinner-border" role="status"></div>
+        </div>
+        <div>
+            <a href="{% url 'main:edit_event' event %}" class="text-decoration-none" >Edit Event</a>
+            <a href="{% url 'main:delete' event|lower %}" class="text-decoration-none" >Delete</a>
+
+        </div>
+    </div>
+    {% block scripts %}
+        <script>
+            coundownInterval = setInterval(() => {
+                today = new Date();
+                bday = new Date("{{ object.birthdate.isoformat}}"); 
+                age = today.getFullYear() -1 - bday.getFullYear();
+    
+                upcomingBday = new Date(today.getFullYear(), bday.getMonth(), bday.getDate());
+                if(today > upcomingBday) {
+                upcomingBday.setFullYear(today.getFullYear() + 1);
+                }
+                
+                
+                daysLeft = Math.floor((upcomingBday.getTime() - today.getTime()) / ((1000 * 60 * 60 * 24)));
+                hoursLeft = Math.floor((upcomingBday.getTime() / (1000 * 60 * 60) - (today.getTime() / (1000 * 60 * 60))) % 24)
+                minutesLeft = Math.floor((upcomingBday.getTime() / (1000 * 60 ) - (today.getTime() / (1000 * 60))) % 60)
+                secondsLeft = Math.floor((upcomingBday.getTime() / (1000) - (today.getTime() / (1000))) % 60)
+
+            if (minutesLeft > 0 && secondsLeft > 0 ) {
+                document.getElementById("countdown").innerText = `{{object.celebrant}} will be ${age + 1} in: \n${daysLeft} day(s), ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds`;
+
+            } 
+            else if (minutesLeft <= 0 && secondsLeft <= 0){
+                clearInterval(coundownInterval)
+                document.getElementById("countdown").innerText = `It's {{object.celebrant}} birthday! Send them well wishes`;
+            } 
+              
+
+        }, 1000);
+
+        </script>
+    {% endblock scripts %}
+
+{% endblock %}
+
