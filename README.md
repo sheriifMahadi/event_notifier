@@ -1,9 +1,11 @@
 # event_notifier
-Django Birthday Notifier APP
-A birthday reminder app with user functionalities
+Django Birthday Notifier APP\
+[live website](https://mahadisheriff.pythonanywhere.com/)
 
-![Screenshot from 2022-07-20 09-49-31](https://user-images.githubusercontent.com/70480860/179940551-a92048b7-a921-4210-a1d5-4905c7a70475.png)
+A birthday reminder app with user functionalities and crud operations 
 
-![Screenshot from 2022-07-20 09-49-12](https://user-images.githubusercontent.com/70480860/179940641-20f22310-f307-40ef-9e14-aa54c0c67c01.png)
 
-![Screenshot from 2022-07-20 09-49-19](https://user-images.githubusercontent.com/70480860/179940668-d1f30930-be1c-4141-9ec5-d69f69796d30.png)
+![Screenshot from 2022-11-20 16-04-42](https://user-images.githubusercontent.com/70480860/202909968-da6e07a3-ccdf-4b3b-914b-fcd61cde5ee1.png)
+![Screenshot from 2022-11-20 16-05-23](https://user-images.githubusercontent.com/70480860/202909970-22061356-2307-48d4-8631-8eced161fc72.png)
+![Screenshot from 2022-11-20 16-08-27](https://user-images.githubusercontent.com/70480860/202909972-920ca7a2-4fcc-4233-a235-f9ea5ca43216.png)
+![Screenshot from 2022-11-20 16-08-58](https://user-images.githubusercontent.com/70480860/202909973-eedac1a8-66ab-4357-aaf2-81f7fead61c8.png)
