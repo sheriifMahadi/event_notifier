@@ -16,13 +16,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = '5m_6ejp&atpebxjvw$f+300z@v$mzrj)2a3*$kbjbuv3^gm_fn'
-
-
-# dotenv_file = os.path.join(BASE_DIR, ".env")
-# if os.path.isfile(dotenv_file):
-#     dotenv.load_dotenv(dotenv_file)
-# SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 DEBUG = True
 
