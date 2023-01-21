@@ -24,12 +24,18 @@ class EventListView(ListView):
 
 class EventDetailView(DetailView):
     model = Event
+    slug_url_kwarg = 'slug'
     template_name = 'birthday_notifier/event_detail.html'
-    
-    def get_queryset(self):
-        if self.request.user.is_authenticated:
-            events = Event.objects.filter(owner=self.request.user)
-            return events
+
+    def get_object(self):
+        self.obj = super().get_object()
+        return self.obj
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["event"] = self.obj
+        print(self.obj.slug)
+        return context
 
 @login_required
 def AddEvent(request):
